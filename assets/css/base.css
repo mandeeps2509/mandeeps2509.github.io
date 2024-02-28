@@ -1,0 +1,178 @@
+/* Modified CSS file for the base 
+classes Ref: https://github.com/squidfunk/mkdocs-material/
+*/
+
+@charset "utf-8";
+
+@import "theme.css";
+
+/* root properties */
+/*
+:root {
+    --md-primary-fg-color: w3-amber-l3;
+    --md-primary-fg-color--light: w3-amber-light;
+    --md-primary-fg-color--dark: w3-amber-dark;
+    --md-primary-bg-color: w3-teal-d4;
+    --md-primary-bg-color--light: w3-teal-light;
+    --md-accent-fg-color: w3-amber-d1;
+    --md-accent-fg-color--transparent: w3-amber-l4;
+    --md-accent-bg-color: w3-teal-d3;
+    --md-accent-bg-color--light: w3-teal-l4;
+}*/
+:root {
+    --md-primary-fg-color: #fff3cd;
+    --md-primary-fg-color--light: #fffbf0;
+    --md-primary-fg-color--dark: #826200;
+    --md-primary-bg-color: #005950;
+    --md-primary-bg-color--light: #e9fffd;
+    --md-accent-fg-color: #eab000;
+    --md-accent-fg-color--transparent: #fff3cd;
+    --md-accent-bg-color: #00685d;
+    --md-accent-bg-color--light: #b7fff8;
+}
+
+:root [data-md-color-scheme=light] {
+    --md-default-bg-color: var(--md-primary-bg-color)
+}
+
+/* container set to viewport & 'font-size' for base is set */
+html {
+    height: 100%;
+    overflow-x: auto;
+    padding: 1.5%;
+
+    font-size: 125%;
+}
+
+/* [screen small dev] */
+@media only screen and (max-width: 400px) {
+    html {
+        font-size: 100%;
+        height: 80%;
+    }
+}
+
+/* [screen medium dev] */
+@media only screen and (min-width: 768px) {
+    html {
+        font-size: 137.5%;
+    }
+}
+
+/* [screen large dev] */
+@media only screen and (min-width:992px) {
+    html {
+        font-size: 150%;
+    }
+}
+
+/* body is stretched to container w/ flexbox (footer aligned to the bottom of viewport) */
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100%;
+    background-color: var(--md-default-bg-color);
+}
+
+/* [print preview mode] block view instead of flexbox */
+@media print {
+    body {
+        display: block;
+    }
+}
+
+/* grid container - for wrapper element within header, content & footer */
+.md-grid {
+    display: grid;
+    max-width: px2rem(1220px);
+    margin-inline: auto;
+}
+
+
+/* main container */
+.md-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: 10%;
+}
+
+/* [print preview mode] block instead of flexbox */
+@media print {
+    .md-container {
+        display: block;
+    }
+}
+
+/* main area */
+.md-main {
+    flex-grow: 1;
+}
+
+/* main area wrapper */
+.md-main__inner {
+    display: flex;
+    height: 100%;
+    margin-top: px2rem(30px);
+}
+
+
+/* toggle - checkbox element: drawer & nav + search */
+.md-toggle {
+    display: none;
+}
+
+/* option - radio element */
+.md-option {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+/* option label - checked button */
+.md-option:checked + label:not([hidden]) {
+    display: block;
+}
+
+/* outline for keyboard dev */
+.md-option.focus-visible + label {
+    outline-style: auto;
+    outline-color: var(--md-accent-fg-color);
+}
+
+/* hyperlinks in the section container */
+.md-container div a {
+    color: #2a7ae0;
+    text-decoration: none;
+
+    &:hover {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    &:visited {
+        color: #205ca1;
+    }
+
+}
+
+.md-container div img {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    max-width: 275px;
+    padding: 2.5%;
+}
+
+/* footer */
+footer {
+    margin: 10%;
+    text-align: center;
+}
+
+/* margin of page */
+@page {
+    margin: 15mm;
+}

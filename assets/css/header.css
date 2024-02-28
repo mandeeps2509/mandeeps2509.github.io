@@ -1,0 +1,313 @@
+/* Modified CSS file for the header w/ navigation 
+classes Ref: https://github.com/squidfunk/mkdocs-material/
+*/
+
+@import "theme.css";
+
+/* Header element */
+.md-header {
+    position: sticky;
+    inset-inline: 0;
+    top: 0;
+    z-index: 4;
+    max-height: 55px;
+    display: block;
+    color: var(--md-primary-bg-color);
+    background-color: var(--md-primary-fg-color);
+    border: ridge;
+    border-color: bisque;
+    box-shadow:
+        0 0             px2rem(4px) rgba(0, 0, 0, 0),
+        0 px2rem(4px)   px2rem(8px) rgba(0, 0, 0, 0);
+}
+
+/* [print]: hide header */
+@media print {
+    .md-header{
+        display: none;
+    }
+}
+
+/* small screen */
+@media only screen and (max-width: 400px) {
+    .md-header {
+        max-height: 50px;
+    }
+}
+
+/* header - hidden */
+.md-header[hidden] {
+    transition:
+        transform   250ms   cubic-bezier(0.8, 0, 0.6, 1),
+        box-shadow  250ms;
+    transform: translateY(-100%);
+}
+
+/* header wrapper */
+.md-header__inner {
+    display: flex;
+    align-items: center;
+    max-height: 55px;
+    padding: 0 px2rem(4px);
+}
+
+/* small screen */
+@media only screen and (max-width: 400px) {
+    .md-header__inner .md-grid {
+        max-height: 50px;
+    } 
+}
+
+/* header button */
+.md-header__button {
+    position: relative;
+    z-index: 1;
+    padding: 0.5%;
+    margin: 1.5%;
+    color: currentcolor;
+    vertical-align: middle;
+    cursor: pointer;
+    outline-color: var(--md-accent-fg-color);
+    transition: opacity 250ms;
+    width: 15%;
+    min-width: 50px;
+    max-width: 55px;
+    min-height: 50px;
+    max-height: 55px;
+
+    /* button on hover */
+    &:hover {
+        opacity: 0.7;
+    }
+
+    /* button: after 
+    &::after {
+        display: none;
+    }*/
+
+    /* header button: visible */
+    &:not([hidden]) {
+        display: inline-block;
+    }
+
+    /* hide outline for pointer devices */
+    &:not(.focus-visible) {
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+/* button with logo 
+.md-header__inner .md-header__button .md-logo {
+    padding: px2rem(8px);
+    margin: px2rem(4px);
+    height: auto;
+    max-width: px2rem(24px);
+    width: 15%;
+}*/
+
+/* hide button [tablet-] 
+@include break-to-device(tablet) {
+    display: none;
+}
+@media screen and (min-width: 768px) {
+    .md-header__button .md-logo {
+        display: none;
+    }
+}*/
+
+/* image or icon */
+.md-header__button .md-logo:is(img, svg) {
+    display: grid;
+    top: 0;
+    margin-inline: 5%;
+    width: 15%;
+    float: left;
+    max-width: 100px;
+    min-width: 50px;
+    min-height: 50px;
+    max-height: 55px;
+    fill: currentcolor;
+}
+
+div .md-header__button .md-icon:is(img, svg) {
+    display: grid;
+    top: 0;
+    margin-inline: 5%;
+    width: 10%;
+    float: right;
+    min-height: 50px;
+    max-height: 55px;
+    max-block-size: 55px;
+    fill: currentcolor;
+}
+
+/* small screen */
+@media only screen and (max-width: 400px) {
+    a .md-header__button .md-logo:is(img, svg) {
+        max-height: 50px;
+    }
+}
+
+/* small screen */
+@media only screen and (max-width: 400px) {
+    div .md-header__button .md-icon:is(img, svg) {
+        max-height: 50px;
+    }
+}
+
+/* search button */
+
+/* hide button [tablet landscape+] 
+@include break-from-device(tablet landscape) {
+    display: none;
+}
+*/
+@media screen and (min-width: 768px) and (orientation: landscape) {
+    .md-header__button[for="__search"] {
+        display: none;
+    }
+}
+
+/* hide button [no-js] 
+.no-js.md-header__button[for="__search"] {
+    display: none;
+}*/
+
+/* right to left lang adjustment 
+[dir="rtl"] .md-header__button[for="__search"] svg {
+    transform: scaleX(-1);
+}*/
+
+/* drawer button 
+@media screen and (max-width: 768px) {
+    /* hide button [screen+] 
+    @include break-from-device(screen) {
+        display: none;
+    }
+    .md-header__button[for="__drawer"] {
+        display: none;    
+    }
+}*/
+
+
+/* header topic */
+.md-header__topic {
+    position: relative;
+    display: flex;
+    max-width: 100%;
+    white-space: nowrap;
+    transition:
+        transform   400ms cubic-bezier(0.1, 0.7, 0.1, 1),
+        opacity     150ms;
+}
+
+/* 2nd header topic - title of curr page */
+.md-header__topic + .md-header__topic {
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    transition: 
+        transform   400ms   cubic-bezier(1, 0.7, 0.1, 0.1),
+        opacity     150ms;
+    transform: translateX(px2rem(25px));
+}
+
+/* right to left lang adjustment */
+[dir="rtl"] .md-header__topic {
+    transform: translateX(px2rem(-25px));
+}
+        
+
+/* title's font-weight adjustment 
+.md-header__topic:first-child {
+    font-weight: 700;
+    padding-left: 4px;
+}*/
+
+/* header title */
+.md-header__title {
+    flex-grow: 1;
+    height: px2rem(40px);
+    margin-inline: px2rem(20px) px2rem(8px);
+    vertical-align: middle;
+    float: right;
+    font-size: 21px;
+    line-height: px2rem(48px);
+    width: 70%;
+}
+
+@media only screen and (max-width: 400px) {
+    .md-header-title {
+        max-height: 36px;
+        font-size: 16px;
+    }
+}
+
+/* header title */
+.md-header__title--active .md-header__topic {
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    transition:
+        transform   400ms   cubic-bezier(1, 0.7, 0.1, 0.1),
+        opacity     150ms;
+    transform: translateX(px2rem(25px));
+}
+
+/* right to left lang adjustment */
+[dir="rtl"] .md-header__title--active.md-header__topic {
+    transform: translateX(px2rem(25px));
+}
+
+/* 2nd header topic - curr page title */
+.md-header__title--active.md-header__topic + .md-header__topic {
+    z-index: 0;
+    pointer-events: initial;
+    opacity: 1;
+    transition:
+        transform 400ms cubic-bezier(0.1, 0.7, 0.1, 1),
+        opacity     150ms;
+    transform: translateX(0);
+}
+        
+
+/* overflowing text: add ellipses */
+.md-header__title > .md-header__ellipsis {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 1.5%;
+}
+
+
+/* header option */
+span .md-header__option {
+    display: grid;
+    top: 10px;
+    flex-shrink: 0;
+    max-width: 50%;
+    float: right;
+    vertical-align: center;
+    padding: 1.5%;
+    transition:
+        max-width   0ms 250ms,
+        opacity   250ms   250ms;
+}
+
+.md-header__option .w3-button {
+    display: grid;
+    vertical-align: center;
+    float: right;
+}
+
+/* search active: hide toggle */
+[data-md-toggle="search"]:checked ~ .md-header.md-header__option {
+    max-width: 0;
+    opacity: 0;
+    transition:
+        max-width   0ms,
+        opacity     0ms;
+}
+
+
