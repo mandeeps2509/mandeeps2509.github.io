@@ -10,8 +10,8 @@
         <title>Mandeep Singh</title>
         <link rel="preconnect" href="//www.gstatic.com" crossorigin>
         <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Roboto">  <!--:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">-->
-        <link rel="stylesheet" href="assets/css/main.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="assets/css/main.css">
         <!--<style>
             :root{--md-text-font:"Roboto";
                 --md-code-font:"Roboto Mono"}
@@ -34,7 +34,7 @@
         <header class="md-header" data-md-component="header">
             <div class="md-header__inner md-grid" aria-label="Header">
                 <!--<span class="w3-button w3-display-topright" onclick="document.getElementsByClassName('md-header__inner').style.display='none'">&times</span>-->
-                <a href="." title="Homepage" class="md-header__button md-logo" aria-label="M"><!-- data-md-component="logo"-->
+                <a href="./index.html" title="Homepage" class="md-header__button md-logo" aria-label="M"><!-- data-md-component="logo"-->
                     <svg xmlns="https://www.w3.org/2000/svg" viewBox="-10 -10 120 90"> 
                         <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" style="fill:#ffc107"></path> 
                         <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5"></path> 
@@ -45,24 +45,36 @@
                 <div class="md-header__title"><!-- data-md-component="header-title">-->
                     <div class="md-header__ellipsis">
                         <div class="md-header__topic">
-                            <span class="md-ellipsis"><h3><b>MANDEEP SINGH  </b></h3></span>
-                            <span class="md-header_option">
+                            <span class="md-ellipsis"><h3><b>MANDEEP <span class="md-title_lastname">SINGH  </span></b></h3></span>
+                            <div class="md-header_option" id="menu_options">
                                 <a class="md-header_option w3-button" href="#about"><em> About </em></a>
                                 <a class="md-header_option w3-button" href="#experience"><em>Experience</em></a>
                                 <a class="md-header_option w3-button" href="#projects"><em>Projects</em></a>
-                            </span>    
+                                <a class="md-header_option w3-button" href="./docs/m-resume.pdf"><em>Resume</em></em></a>
+                            </div>    
                         </div>
                     </div>
                 </div>
                 <!--<button type="menu" onclick="document.getElementsByClassName('md-header__inner').style.display='block'">-->
-                <div class="md-header__button md-icon" for="__drawer">
-                    <svg xmlns="https://www.w3.org/2000/svg" viewBox="1000 0 100 100">
-                        <path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z" style="fill:black"></path>
+                <a class="md-header__button md-icon" for="__drawer" onclick="displayMenu('menu_options')">
+                    <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 27 27">
+                        <path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z" style="fill:#303e45"></path>
                     </svg>
-                </div>
+                </a>
                 <!--</button>-->
                 
             </div>
+            <script>
+                function displayMenu(x) {
+                    var n = document.getElementById(x);
+                    if (n.className === "md-header_option") {
+                        n.className += " md-menu__active";
+                    }
+                    else {
+                        n.className = "md-header_option";
+                    }
+                }
+            </script>
             
         </header>
 
@@ -76,9 +88,11 @@
                 I've graduated from <a href="https://www.iitk.ac.in">Indian Institute of Technology (IIT) Kanpur, INDIA</a> with a Bachelor of Technology (BTech - Double Major) in Mechanical Engineering and Electrical Engineering. During my senior year in the undergrad, I've also collaborated with <a href="htttps://www.tokekar.com">Prof Pratap Tokekar (Department of Computer Science, University of Maryland, USA)</a>, who supervised me on the research topic of aerial robotic vision.
                 <br />
                 <br />
-                <img src="Monash_University_logo.png" alt="Monash University logo"> <img src="SRA_Logo_1.png" alt="Samsung Research logo"> <img src="iitk-logo.png" alt="IIT Kanpur logo">
+                <span class="image">
+                    <img src="Monash_University_logo.png" alt="Monash University logo"> <img src="SRA_Logo_1.png" alt="Samsung Research logo"> <img src="iitk-logo.png" alt="IIT Kanpur logo">
+                </span>
             </div>
-            <br \>
+            <br />
             <!-- ABOUT section end -->
 
             <!-- EXPERIENCE section start -->

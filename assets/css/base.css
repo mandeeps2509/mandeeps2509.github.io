@@ -29,6 +29,7 @@ classes Ref: https://github.com/squidfunk/mkdocs-material/
     --md-accent-fg-color--transparent: #fff3cd;
     --md-accent-bg-color: #00685d;
     --md-accent-bg-color--light: #b7fff8;
+    --md-primary-bg-on-hover-color: #becbd2;
 }
 
 :root [data-md-color-scheme=light] {
@@ -159,17 +160,35 @@ body {
 
 }
 
-.md-container div img {
+.md-container div span img {
     display: grid;
     grid-template-columns: auto auto auto;
-    max-width: 275px;
+    max-width: 255px;
+    max-height: 125px;
     padding: 2.5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (min-width: 625px) {
+    .md-container div span img {
+        display: grid;
+        max-width: 255px;
+        max-height: 125px;
+        padding: 2.5%;
+        float: left;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }    
 }
 
 /* footer */
 footer {
-    margin: 10%;
     text-align: center;
+    background-color: var(--md-primary-fg-color);
+    border: ridge;
+    border-color: bisque;
 }
 
 /* margin of page */
