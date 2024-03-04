@@ -183,6 +183,31 @@ body {
     }    
 }
 
+/* section */
+@media only screen and (min-width: 786px) {
+    .md-container div #experience {
+        display: grid;
+        grid-template-columns: 70% 50px;
+    }
+}
+
+/* section table */
+
+.md-container table {
+    overflow-x: auto;
+}
+
+.md-container tr {
+    text-align: left;
+    padding: 8px;
+    overflow-x: auto;
+}
+
+
+.md-container ul {
+    padding: 2.5%;
+}
+
 /* footer */
 footer {
     text-align: center;

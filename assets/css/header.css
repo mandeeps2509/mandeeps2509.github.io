@@ -354,6 +354,7 @@ classes Ref: https://github.com/squidfunk/mkdocs-material/
     .md-header__option.md-menu__active a {
         display: block;
         margin-inline: 5%;
+        padding: 1.5%;
         text-align: left;
     }
 }
@@ -362,7 +363,7 @@ classes Ref: https://github.com/squidfunk/mkdocs-material/
 .md-header__option .w3-button {
     display: inline-grid;
     top: 10 px;
-    vertical-align: center;
+    align-content: center;
     float: center;
     font-size-adjust: 18px;
     
