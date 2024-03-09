@@ -243,13 +243,21 @@ body {
     padding: 2.5%;
 }
 
-/* img */
+/* experince section img */
 .md-container #experience img {
     width: 125%;
     max-width: 150px;
     min-width: 55px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.18);
     text-align: center;    
+}
+
+/* icons in contact section */
+.md-container #contact i {
+    font-size: 36px;
+    color: rgb(30, 30, 32);
+    padding: 2.5%;
+    margin-bottom: 2.5%;
 }
 
 /* footer */
