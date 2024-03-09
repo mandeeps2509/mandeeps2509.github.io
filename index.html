@@ -33,7 +33,6 @@
         <div data-md-component="announce"></div>-->
         <header class="md-header" data-md-component="header">
             <div class="md-header__inner md-grid" aria-label="Header">
-                <!--<span class="w3-button w3-display-topright" onclick="document.getElementsByClassName('md-header__inner').style.display='none'">&times</span>-->
                 <a href="./index.html" title="Homepage" class="md-header__button md-logo" aria-label="M"><!-- data-md-component="logo"-->
                     <svg xmlns="https://www.w3.org/2000/svg" viewBox="-10 -10 120 90"> 
                         <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" style="fill:#ffc107"></path> 
@@ -45,33 +44,41 @@
                 <div class="md-header__title"><!-- data-md-component="header-title">-->
                     <div class="md-header__ellipsis">
                         <div class="md-header__topic">
-                            <span class="md-ellipsis"><h3><b>MANDEEP <span class="md-title_lastname">SINGH  </span></b></h3></span>
-                            <div class="md-header_option" id="menu_options">
-                                <a class="md-header_option w3-button" href="#about"><em> About </em></a>
-                                <a class="md-header_option w3-button" href="#experience"><em>Experience</em></a>
-                                <a class="md-header_option w3-button" href="#projects"><em>Projects</em></a>
-                                <a class="md-header_option w3-button" href="./docs/m-resume.pdf"><em>Resume</em></em></a>
-                            </div>    
+                            <span class="md-ellipsis"><h3><b>MANDEEP <span class="md-title_lastname" id="title-lastname">SINGH  </span></b></h3></span>
+                               
                         </div>
                     </div>
                 </div>
-                <!--<button type="menu" onclick="document.getElementsByClassName('md-header__inner').style.display='block'">-->
-                <a class="md-header__button md-icon" for="__drawer" onclick="displayMenu('menu_options')">
+                <a class="md-header__button md-icon" for="__drawer" onclick="displayMenu('menu_options', false)" id="menu__button">
                     <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 27 27">
                         <path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z" style="fill:#303e45"></path>
                     </svg>
                 </a>
-                <!--</button>-->
+                <div class="md-header__option" id="menu_options">
+                    <a class="md-header__option w3-button w3-hover-light-grey w3-display-topright" onclick="displayMenu('menu_options', true)">&times</a>
+                    <a class="md-header__option w3-button w3-hover-light-grey" id="options" href="#about"><em><h5>  About </h5></em></a>
+                    <a class="md-header__option w3-button w3-hover-light-grey" id="options" href="#experience"><em><h5> Experience  </h5></em></a>
+                    <a class="md-header__option w3-button w3-hover-light-grey" id="options" href="#projects"><em><h5>  Projects  </h5></em></a>
+                    <a class="md-header__option w3-button w3-hover-light-grey" id="options" href="./docs/m-resume.pdf"><em><h5>  Resume  </h5></em></a>
+                </div> 
                 
             </div>
             <script>
-                function displayMenu(x) {
+                function displayMenu(x, close) {
                     var n = document.getElementById(x);
-                    if (n.className === "md-header_option") {
-                        n.className += " md-menu__active";
+                    if (close == true) {
+                        n.style.display = "none";
+                        n.className = n.className.replace("md-header__option--open", "md-header__option");
+                        document.getElementById("menu__button").style.display = "grid";
+                        document.getElementById("title-lastname").style.removeProperty("display");
+                        
                     }
                     else {
-                        n.className = "md-header_option";
+                        n.style.display = "block";
+                        n.className = n.className.replace("md-header__option", "md-header__option--open");
+                        document.getElementById("menu__button").style.display = "none";
+                        document.getElementById("title-lastname").style.display = "none";
+                        
                     }
                 }
             </script>
@@ -81,11 +88,13 @@
         <section class="md-container">
             <!-- ABOUT section start -->
             <div id="about">
-                <h5><b>About<hr></b></h5>
-                I'm a final-year postgrad, pursuing Master of Artificial Intelligence from <a href="https://www.monash.edu>">Monash University, Melbourne, AUS</a>.
+                <h4><b>About<hr></b></h4>
+                <p><img src="./docs/m-pic.png" alt="Singh M." id="pic"> I'm a final-year postgrad, pursuing Master of Artificial Intelligence from <a href="https://www.monash.edu>">Monash University, Melbourne, AUS</a>.
                 Previously, I've been fortunate to be a part of the CMOS Image Sensor SW team at <a href="https://semiconductor.samsung.com/emea/image-sensor/mobile-image-sensor/">Samsung Research (Bangalore, INDIA)</a> working on building cutting-edge mobile image sensors (such as industry-first 200MP).
                 
-                I've graduated from <a href="https://www.iitk.ac.in">Indian Institute of Technology (IIT) Kanpur, INDIA</a> with a Bachelor of Technology (BTech - Double Major) in Mechanical Engineering and Electrical Engineering. During my senior year in the undergrad, I've also collaborated with <a href="htttps://www.tokekar.com">Prof Pratap Tokekar (Department of Computer Science, University of Maryland, USA)</a>, who supervised me on the research topic of aerial robotic vision.
+                I've graduated from <a href="https://www.iitk.ac.in">Indian Institute of Technology (IIT) Kanpur, INDIA</a> with a Bachelor of Technology (BTech - Double Major) in Mechanical Engineering and Electrical Engineering. 
+                During my senior year in the undergrad, I've also collaborated with <a href="htttps://www.tokekar.com">Prof Pratap Tokekar (Department of Computer Science, University of Maryland, USA)</a>, who supervised me on the research topic of aerial robotic vision.
+                </p>
                 <br />
                 <br />
                 <span class="image">
@@ -97,7 +106,7 @@
 
             <!-- EXPERIENCE section start -->
             <div id="experience">
-                <h5><b>Experience</b><hr></h5>
+                <h4><b>Experience</b><hr></h4>
                 <ul>
                     <table>
                         <tr>
@@ -108,6 +117,9 @@
                             <td>
                                 - Devised a simpler & efficient Flicker Mitigation Algorithm for preview mode of super slow motion videos (480,960 fps).<br />
                                 - Developed & owned Bad Pixel Compensation related modules of firmware for various mobile image sensors.<br \>
+                            </td>
+                            <td>
+                                <img src="https://img.global.news.samsung.com/global/wp-content/uploads/2020/09/Samsung-07micrometer-pixel-ISOCELL-Image-Sensor_main_0.jpg" alt="Image Sensor"></td>
                             </td>
                         </tr>
                         <tr>
@@ -128,7 +140,7 @@
                         <tr>
                             <td>
                                 - Visual Odometry for UAVs to autonomously inspect bridges: <br \>
-                                * Comprehensively analyzed the integration of visual data with Inertial Measurement Units (IMUs) using various VIO/SLAM methods & was presented in ISER-2018.<br \>
+                                * Comprehensively analyzed the integration of visual data with Inertial Measurement Units (IMUs) using various VIO/SLAM methods & was presented in the proceedings of the International Symposium of Experimental Robotics, <a href="https://link.springer.com/chapter/10.1007/978-3-030-33950-0_18">ISER-2018</a>.<br \>
                                 * Formulated a novel method to integrate 2D LiDAR data with the odometry pipeline as a feedback loop.
                             </td>
                         </tr>
@@ -139,19 +151,19 @@
 
             <!-- PROJECTS section start -->
             <div id="projects">
-                <h5><b>Projects</b><hr></h5>
+                <h4><b>Projects</b><hr></h4>
                 <ul>
                     <table>
                         <tr><td><li><h6>Multi-Agent Reinforcement Learning (MARL) {with Game Theory}</h6></li></td>
                             <td><i>(August'23 - November'23)</i></td>
                         </tr>
-                        <tr><td><li><h6>Visual Question Answering (VQA)</h6></li></td>
+                        <tr><td><li><h6>Visual Question Answering (VQA)</h6><i>Supervisor: Prof Harish Karnick, Dept. of CSE, IIT Kanpur [<a href="./docs/NLP_Report.pdf">pdf</a>]</i></li></td>
                             <td><i>(March'18 - April'18)</i></td>
                         </tr>
-                        <tr><td><h6><li>Vision based Active Target Tracking</h6></li></td>
+                        <tr><td><h6><li>Vision based Active Target Tracking</h6><i>Supervisor: Prof Mangal Kothari, Dept. of AE, IIT Kanpur [<a href="./docs/RSNN__Recurrent_Siamese_Neural_Network_based_Target_Tracking">pdf</a>]</i></a></li></td>
                             <td><i>(February'18 - April'18)</i></td>
                         </tr>
-                        <tr><td><h6><li>Modular Aerial Vehicle (ModAV)</h6></li></td>
+                        <tr><td><h6><li>Modular Aerial Vehicle (ModAV)</h6><i>Supervisor: Prof Ashish Dutta, Dept. of ME, IIT Kanpur [<a href="./docs/ModAV_Poster.pdf">poster</a>]</i></li></td>
                             <td><i>(August'17 - April'18)</i></td>
                         </tr>
                     </table>

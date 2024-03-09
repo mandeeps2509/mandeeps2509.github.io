@@ -135,23 +135,22 @@ classes Ref: https://github.com/squidfunk/mkdocs-material/
 }
 
 
-/* large screen (hide menu button) */
+/* large screen (hide menu button) 
 .md-header__button[for="__drawer"] {
     display: none;
-}
+}*/
 
-/* small screen (show menu button) */
-@media only screen and (max-width: 821px) {
-    .md-header__button[for="__drawer"] {
-        display: grid;
-        top: 0;
-        width: 10%;
-        float: right;
-        min-height: 50px;
-        max-height: 55px;
-        max-block-size: 55px;
-        fill: currentcolor;
-    }
+/* small screen (show menu button) 
+@media only screen and (max-width: 821px) {*/
+.md-header__button[for="__drawer"] {
+    display: grid;
+    top: 0;
+    width: 10%;
+    float: right;
+    min-height: 50px;
+    max-height: 55px;
+    max-block-size: 55px;
+    fill: currentcolor;
 }
 
 /* small screen */
@@ -290,6 +289,7 @@ classes Ref: https://github.com/squidfunk/mkdocs-material/
     width: 100%;
     height: 100%;
     padding: 1.5%;
+    margin: 8px;
 }
 
 /* overflowing header title (small screen) */
@@ -299,76 +299,75 @@ classes Ref: https://github.com/squidfunk/mkdocs-material/
     }
 }
 
-/* header option */
-.md-header__option {
-    display: inline-grid;
-    overflow: hidden;
-    top: 10px;
-    flex-shrink: 0;
-    max-width: 50%;
-    max-height: 55px;
-    float: right;
-    margin-left: 15%;
-    text-align: center;
-    padding: 1.5%;
-    font-size-adjust: 0.5;
-    transition:
-        max-width   0ms 250ms,
-        opacity   250ms   250ms;
-}
-
-.md-header__option a {
-    display: block;
-    float: center;
-    text-align: center;
-    color: var(--md-primary-bg-color);
-    padding: 14px 14px;
-    margin-left: 5%;
-    text-decoration: none;
-    font-size: 17px;
-
-    &:hover {
-        opacity: 0.7;
-        background-color: #7d97a5;
-        color: #2a7ae0;
-    }
-}
-
-/* small screen */
+/* small screen 
 @media only screen and (max-width: 821px) {
     .md-header_option {
         display: none;
     }
 }
 
-/* small screen [active-menu] */
 @media only screen and (max-width: 821px) {
-    .md-header__option.md-menu__active {
-        display: block;
-        margin-inline: 5%;
-        text-align: left;
+    .md-header_option a {
+        display: none;
+    }
+}*/
+/* header option (default: closed menu) */
+.md-header__option {
+    display: none;
+}
+
+/* header option (menu open) */
+.md-header__option--open {
+    display: block;
+    padding-block-start: min(10%, 60px);
+    z-index: 7;
+    width: 100%;
+    min-width: 200px;
+    max-width: 360px;
+    box-shadow: 0 4px 8 px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.18);
+    background-color: var(--md-accent-fg-color--transparent);
+    max-height: 55px;
+    float: right;
+    margin-left: 5%;
+    font-size-adjust: 0.8;
+    transition:
+        max-width   0ms 250ms,
+        opacity   250ms   250ms;
+}
+
+.md-header__option--open a {
+    display: block;
+    text-align: left;
+    z-index: 7;
+    opacity: 0.9;
+    color: var(--md-primary-bg-color);
+    background-color: var(--md-accent-fg-color--transparent);
+    padding: 2%;
+    padding-left: 5%;
+    text-decoration: none;
+    font-size: 18px;
+
+    &:hover {
+        opacity: 0.9;
+        background-color: #7d97a5;
+        color: #2a7ae0;
     }
 }
 
-@media only screen and (max-width: 821px) {
-    .md-header__option.md-menu__active a {
-        display: block;
-        margin-inline: 5%;
-        padding: 1.5%;
-        text-align: left;
-    }
+#options {
+    min-width: 125px;
 }
 
 
-.md-header__option .w3-button {
+.w3-button {
     display: inline-grid;
     top: 10 px;
     align-content: center;
-    float: center;
-    font-size-adjust: 18px;
+    font-size: 17px;
+    opacity: 0.9;
     
     &:hover {
-        opacity: 0.7;
+        opacity: 0.8;
         background-color: var(--md-primary-bg-on-hover-color);
     }
 }

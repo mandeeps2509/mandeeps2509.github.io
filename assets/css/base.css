@@ -26,7 +26,7 @@ classes Ref: https://github.com/squidfunk/mkdocs-material/
     --md-primary-bg-color: #005950;
     --md-primary-bg-color--light: #e9fffd;
     --md-accent-fg-color: #eab000;
-    --md-accent-fg-color--transparent: #fff3cd;
+    --md-accent-fg-color--transparent: #dbf382;
     --md-accent-bg-color: #00685d;
     --md-accent-bg-color--light: #b7fff8;
     --md-primary-bg-on-hover-color: #becbd2;
@@ -98,6 +98,14 @@ body {
     flex-direction: column;
     flex-grow: 1;
     margin: 10%;
+
+    @media only screen and (max-width: 768px) {
+        margin: 7.5%;
+    }
+
+    @media only screen and (max-width: 500px) {
+        margin: 5%;
+    }
 }
 
 /* [print preview mode] block instead of flexbox */
@@ -183,6 +191,33 @@ body {
     }    
 }
 
+.md-container #about #pic {
+    display: flex;
+    float: right;
+    max-width: 255px;
+    max-height: 200px;
+    padding: 0.5%;
+    margin-left: 2%;
+    margin-right: 2%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.18);
+
+    @media only screen and (max-width: 365px) {
+        float: center;
+        text-align: center;
+        max-width: 200px;
+        max-height: 150px;
+    }
+
+    @media only screen and (max-width: 280px) {
+        float: center;
+        text-align: center;
+        max-width: 150px;
+        max-height: 120px;
+    }
+}
+
+    
+
 /* section */
 @media only screen and (min-width: 786px) {
     .md-container div #experience {
@@ -206,6 +241,15 @@ body {
 
 .md-container ul {
     padding: 2.5%;
+}
+
+/* img */
+.md-container #experience img {
+    width: 125%;
+    max-width: 150px;
+    min-width: 55px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.18);
+    text-align: center;    
 }
 
 /* footer */
