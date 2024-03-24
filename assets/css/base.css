@@ -25,15 +25,18 @@ classes Ref: https://github.com/squidfunk/mkdocs-material/
     --md-primary-fg-color--dark: #826200;
     --md-primary-bg-color: #005950;
     --md-primary-bg-color--light: #e9fffd;
+    --md-primary-bg-color--base: #f7fcf7;
     --md-accent-fg-color: #eab000;
     --md-accent-fg-color--transparent: #dbf382;
     --md-accent-bg-color: #00685d;
     --md-accent-bg-color--light: #b7fff8;
     --md-primary-bg-on-hover-color: #becbd2;
+    --md-primary-fg-text-color--dark: #09373c;
 }
 
 :root [data-md-color-scheme=light] {
-    --md-default-bg-color: var(--md-primary-bg-color)
+    --md-default-bg-color: var(--md-primary-bg-color--base);
+    --md-default-bg-color-transition: var(--md-primary-bg-color--light);
 }
 
 /* container set to viewport & 'font-size' for base is set */
@@ -41,7 +44,7 @@ html {
     height: 100%;
     overflow-x: auto;
     padding: 1.5%;
-
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 125%;
 }
 
