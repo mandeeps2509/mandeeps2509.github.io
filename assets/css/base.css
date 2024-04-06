@@ -27,10 +27,10 @@ classes Ref: https://github.com/squidfunk/mkdocs-material/
     --md-primary-bg-color--light: #e9fffd;
     --md-primary-bg-color--base: #f7fcf7;
     --md-accent-fg-color: #eab000;
-    --md-accent-fg-color--transparent: #dbf382;
+    --md-accent-fg-color--transparent: #cbee8e;
     --md-accent-bg-color: #00685d;
     --md-accent-bg-color--light: #b7fff8;
-    --md-primary-bg-on-hover-color: #becbd2;
+    --md-primary-bg-on-hover-color: #fbf9f2;
     --md-primary-fg-text-color--dark: #09373c;
 }
 
@@ -179,6 +179,12 @@ body {
     padding: 2.5%;
     margin-left: auto;
     margin-right: auto;
+
+    &:hover {
+        opacity: 0.9;
+        border-radius: 5%;
+        background-color: var(--md-primary-bg-on-hover-color);
+    }
 }
 
 @media only screen and (min-width: 625px) {
@@ -261,6 +267,12 @@ body {
     color: rgb(30, 30, 32);
     padding: 2.5%;
     margin-bottom: 2.5%;
+
+    &:hover {
+        opacity: 0.9;
+        border-radius: 75%;
+        background-color: var(--md-primary-bg-on-hover-color);
+    }
 }
 
 /* footer */
@@ -269,6 +281,18 @@ footer {
     background-color: var(--md-primary-fg-color);
     border: ridge;
     border-color: bisque;
+}
+
+/* transitional effect in the section's div */
+.transit {
+    opacity: 0;
+    transform: translate(0, 10vh);
+    transition: all 750ms;
+}
+
+.transit.visible {
+    opacity: 1;
+    transform: translate(0, 0);
 }
 
 /* margin of page */

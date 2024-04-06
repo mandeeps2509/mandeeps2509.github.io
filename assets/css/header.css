@@ -80,7 +80,8 @@ classes Ref: https://github.com/squidfunk/mkdocs-material/
 
     /* button on hover */
     &:hover {
-        opacity: 0.7;
+        opacity: 0.85;
+        border-radius: 100%;
         background-color: var(--md-primary-bg-on-hover-color);
     }
 

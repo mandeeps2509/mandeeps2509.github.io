@@ -4,7 +4,7 @@
         <meta charset="'utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="description" content="Homepage: Mandeep Singh">
-        <meta name="keywords" content="Mandeep, Singh, IIT, IITK, IIT Kanpur, Monash, AI, ML, CV, NLP">
+        <meta name="keywords" content="Mandeep, Singh, IIT, IITK, IIT Kanpur, Monash, AI, ML, CV, NLP, IP, EE, ME">
         <meta name="author" content="Mandeep Singh">
         <link href="https://mandeeps2509.github.io/" rel="canonical">
         <title>Mandeep Singh</title>
@@ -24,19 +24,20 @@
         <meta property="og:url" content="https://mandeeps2509.github.io">
         <meta name="theme-color" content="#f1f1f1">
         <meta name="color-scheme" content="light">
-        <link rel="icon" href="m-icon.png">
+        <link rel="icon" href="icon-ms.png">
     </head>
     <body dir="ltr" data-md-color-scheme="light"> 
         <label class="md-overlay" for="__drawer"></label>
         <header class="md-header" data-md-component="header">
             <div class="md-header__inner md-grid" aria-label="Header">
                 <a href="./index.html" title="Homepage" class="md-header__button md-logo" aria-label="M"><!-- data-md-component="logo"-->
-                    <svg xmlns="https://www.w3.org/2000/svg" viewBox="-10 -10 120 90"> 
+                    <img src="icon-ms.png" alt="MS logo" style="width:45px; height:41px">
+                    <!--<svg xmlns="https://www.w3.org/2000/svg" viewBox="-10 -10 120 90"> 
                         <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" style="fill:#ffc107"></path> 
                         <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5"></path> 
                         <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" style="fill:#ffda69"></path> 
                         <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25"></path> 
-                    </svg>
+                    </svg>-->
                 </a>
                 <div class="md-header__title"><!-- data-md-component="header-title">-->
                     <div class="md-header__ellipsis">
@@ -48,7 +49,7 @@
                 </div>
                 <a class="md-header__button md-icon" for="__drawer" onclick="displayMenu('menu_options', false)" id="menu__button">
                     <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 27 27">
-                        <path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z" style="fill:#303e45"></path>
+                        <path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z" style="fill:#0e1113"></path>
                     </svg>
                 </a>
                 <div class="md-header__option" id="menu_options">
@@ -61,36 +62,17 @@
                 </div> 
                 
             </div>
-            <script>
-                function displayMenu(x, close) {
-                    var n = document.getElementById(x);
-                    if (close == true) {
-                        n.style.display = "none";
-                        n.className = n.className.replace("md-header__option--open", "md-header__option");
-                        document.getElementById("menu__button").style.display = "grid";
-                        document.getElementById("title-lastname").style.removeProperty("display");
-                        
-                    }
-                    else {
-                        n.style.display = "block";
-                        n.className = n.className.replace("md-header__option", "md-header__option--open");
-                        document.getElementById("menu__button").style.display = "none";
-                        document.getElementById("title-lastname").style.display = "none";
-                        
-                    }
-                }
-            </script>
             
         </header>
 
         <section class="md-container">
             <!-- ABOUT section start -->
-            <div id="about">
+            <div id="about"><!-- class="transit visible">-->
                 <h3><b>About<hr></b></h3>
-                <p><img src="./docs/m-pic.png" alt="Singh M." id="pic"> I'm a final-year postgrad, pursuing Master of Artificial Intelligence from <a href="https://www.monash.edu">Monash University, Melbourne, AUS</a>.
+                <p><img src="./docs/m-pic.png" alt="Singh M." id="pic"> I'm a final-year postgrad, pursuing <i>Master of Artificial Intelligence (MAI)</i> from <a href="https://www.monash.edu">Monash University, Melbourne, AUS</a>.
                 Previously, I've been fortunate to be a part of the CMOS Image Sensor SW team at <a href="https://semiconductor.samsung.com/emea/image-sensor/mobile-image-sensor/">Samsung Research (Bangalore, INDIA)</a> working on building cutting-edge mobile image sensors (such as industry-first 200MP).
                 
-                I've graduated from <a href="https://www.iitk.ac.in">Indian Institute of Technology (IIT) Kanpur, INDIA</a> with a Bachelor of Technology (BTech - Double Major) in Mechanical Engineering and Electrical Engineering. 
+                I've graduated from <a href="https://www.iitk.ac.in">Indian Institute of Technology (IIT) Kanpur, INDIA</a> with a Bachelor of Technology (BTech - Double Major) in <i>Mechanical Engineering & Electrical Engineering (ME-EE)</i>. 
                 During my senior year in the undergrad, I've also collaborated with <a href="htttps://www.tokekar.com">Prof Pratap Tokekar</a> (Department of Computer Science, <a href="https://www.cs.umd.edu">University of Maryland, USA)</a>, who supervised me on the research topic of aerial robotic vision.
                 </p>
                 <br />
@@ -103,7 +85,7 @@
             <!-- ABOUT section end -->
 
             <!-- EXPERIENCE section start -->
-            <div id="experience">
+            <div id="experience"><!-- class="transit" onscroll="section_transition_on_scroll('transit')">-->
                 <h3><b>Experience</b><hr></h3>
                 <ul>
                     <table>
@@ -148,7 +130,7 @@
             <!--EXPERIENCE section end -->
 
             <!-- PROJECTS section start -->
-            <div id="projects">
+            <div id="projects"><!-- class="transit" onscroll="section_transition_on_scroll('transit')">-->
                 <h3><b>Projects</b><hr></h3>
                 <ul>
                     <table>
@@ -170,7 +152,7 @@
             <!-- PROJECTS section end -->
 
             <!-- CONTACT section start -->
-            <div id="contact">
+            <div id="contact"><!--class="transit" onscroll="section_transition_on_scroll('transit')">-->
                 <h3><b>Contact</b><hr></h3>
                     <a href="mailto:mandeeps2509@gmail.com"><i class="fa fa-google"></a></i>  
                     <a href="https://github.com/mandeeps2509"><i class="fa fa-github-square"></a></i> 
@@ -184,5 +166,7 @@
             <hr>
             &#169 MS | All rights reserved, 2024
         </footer>
+
+        <script type="text/javascript" id="section-scripts" src="./assets/js/scripts.js"></script>
     </body>
 </html>
