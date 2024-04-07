@@ -32,6 +32,7 @@ classes Ref: https://github.com/squidfunk/mkdocs-material/
     --md-accent-bg-color--light: #b7fff8;
     --md-primary-bg-on-hover-color: #fbf9f2;
     --md-primary-fg-text-color--dark: #09373c;
+    --md-primary-container-text-color--dark: #2b2e2f;
 }
 
 :root [data-md-color-scheme=light] {
@@ -101,6 +102,10 @@ body {
     flex-direction: column;
     flex-grow: 1;
     margin: 10%;
+    
+    & p, table {
+        color: var(--md-primary-container-text-color--dark);
+    }
 
     @media only screen and (max-width: 768px) {
         margin: 7.5%;
@@ -139,6 +144,7 @@ body {
 /* option - radio element */
 .md-option {
     position: absolute;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.18);
     width: 0;
     height: 0;
     opacity: 0;

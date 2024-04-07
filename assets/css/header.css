@@ -315,6 +315,10 @@ classes Ref: https://github.com/squidfunk/mkdocs-material/
 /* header option (default: closed menu) */
 .md-header__option {
     display: none;
+    max-height: 55px;
+    transition:
+        width   0ms 0.5s,
+        opacity   50ms   0.5s;
 }
 
 /* header option (menu open) */
@@ -325,15 +329,14 @@ classes Ref: https://github.com/squidfunk/mkdocs-material/
     width: 100%;
     min-width: 200px;
     max-width: 360px;
-    box-shadow: 0 4px 8 px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.18);
     background-color: var(--md-accent-fg-color--transparent);
     max-height: 55px;
     float: right;
     margin-left: 5%;
     font-size-adjust: 0.8;
     transition:
-        max-width   0ms 250ms,
-        opacity   250ms   250ms;
+        width   0ms 0.5s,
+        opacity   50ms   0.5s;
 }
 
 .md-header__option--open a {
@@ -347,6 +350,9 @@ classes Ref: https://github.com/squidfunk/mkdocs-material/
     padding-left: 5%;
     text-decoration: none;
     font-size: 18px;
+    transition:
+        width   0s 0.5s,
+        opacity   0s   0.5s;
 
     &:hover {
         opacity: 0.9;
@@ -356,7 +362,10 @@ classes Ref: https://github.com/squidfunk/mkdocs-material/
 }
 
 #options {
-    min-width: 125px;
+    min-width: 130px;
+    transition:
+        width   0ms 0.5s,
+        opacity   50ms   0.5s;
 }
 
 
