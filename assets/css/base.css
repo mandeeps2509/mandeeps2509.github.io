@@ -26,12 +26,12 @@ classes Ref: https://github.com/squidfunk/mkdocs-material/
     --md-primary-bg-color: #005950;
     --md-primary-bg-color--light: #e9fffd;
     --md-primary-bg-color--base: #f7fcf7;
-    --md-accent-fg-color: #eab000;
-    --md-accent-fg-color--transparent: #cbee8e;
+    --md-accent-fg-color: #ffe600e6;
+    --md-accent-fg-color--transparent: #ff7722;
     --md-accent-bg-color: #00685d;
     --md-accent-bg-color--light: #b7fff8;
     --md-primary-bg-on-hover-color: #fbf9f2;
-    --md-primary-fg-text-color--dark: #09373c;
+    --md-primary-fg-text-color--dark: #101010; /*#09373c;*/
     --md-primary-container-text-color--dark: #2b2e2f;
 }
 
@@ -101,7 +101,7 @@ body {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    margin: 10%;
+    margin: 12.5%;
     
     & p, table {
         color: var(--md-primary-container-text-color--dark);
@@ -284,9 +284,9 @@ body {
 /* footer */
 footer {
     text-align: center;
-    background-color: var(--md-primary-fg-color);
-    border: ridge;
-    border-color: bisque;
+    background-color: var(--md-accent-fg-color);
+    /*border: ridge;
+    border-color: bisque;*/
 }
 
 /* transitional effect in the section's div */
