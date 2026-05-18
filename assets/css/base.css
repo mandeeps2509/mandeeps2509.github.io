@@ -27,7 +27,7 @@ classes Ref: https://github.com/squidfunk/mkdocs-material/
     --md-primary-bg-color--light: #e9fffd;
     --md-primary-bg-color--base: #f7fcf7;
     --md-accent-fg-color: #ffe600e6;
-    --md-accent-fg-color--transparent: #ff7722;
+    --md-accent-fg-color--transparent: #0033ff;/*#ff7722;*/
     --md-accent-bg-color: #00685d;
     --md-accent-bg-color--light: #b7fff8;
     --md-primary-bg-on-hover-color: #fbf9f2;
