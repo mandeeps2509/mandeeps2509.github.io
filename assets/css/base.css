@@ -103,6 +103,8 @@ body {
     flex-direction: column;
     flex-grow: 1;
     margin: 12.5%;
+    margin-top: 7%;
+    margin-bottom: 7%;
     
     & p, table {
         color: var(--md-primary-container-text-color--dark);
@@ -281,6 +283,14 @@ body {
         border-radius: 75%;
         background-color: var(--md-primary-bg-on-hover-color);
     }
+}
+
+/* About section - Interest style */
+.md-callout {
+  margin: 32px 0;
+  padding: 16px;
+  border-left: 6px solid #2563eb;
+  background: #eff6ff;
 }
 
 /* footer */
