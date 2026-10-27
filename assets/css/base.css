@@ -105,6 +105,9 @@ body {
     margin: 12.5%;
     margin-top: 7%;
     margin-bottom: 7%;
+    font-size: 0.95em;
+    /* padding: 1%;
+    background-color: #ebfff1; */
     
     & p, table {
         color: var(--md-primary-container-text-color--dark);
